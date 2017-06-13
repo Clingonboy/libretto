@@ -1,7 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uge.libretto.LibrettoController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="it.uge.libretto.LibrettoController">
+   <top>
+      <Label text="Libretto Universitario" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="87.0" prefWidth="87.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="167.0" prefWidth="228.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="110.0" prefWidth="110.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="txtCodice" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtTitolo" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="txtDocente" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label text="Codice" />
+                  <Label text="Titolo" GridPane.columnIndex="1" />
+                  <Label text="Docente" GridPane.columnIndex="2" />
+                  <Button fx:id="btnInserisci" mnemonicParsing="false" onAction="#handleInserisci" text="Inserisci" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <Button fx:id="btnCerca" mnemonicParsing="false" onAction="#handleCerca" text="Cerca" GridPane.rowIndex="2" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </GridPane>
+            <TextArea fx:id="txtMessaggi" editable="false" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
